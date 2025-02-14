@@ -38,13 +38,13 @@ classdef RiemannProblem
         function p_pL = R_neg(obj,u_cL)
             %R_NEG Summary of this method goes here
             %   Detailed explanation goes here
-            p_pL = UnsteadyIsentropic.p_ratio(obj.u_L./obj.c_L-u_cL,obj.g);
+            p_pL = UnsteadyIsentropic.p_ratio(u_cL-obj.u_L./obj.c_L,obj.g);
         end
 
         function p_pL = R_hat_pos(obj,u_cL)
             %R_HAT_POS Summary of this method goes here
             %   Detailed explanation goes here
-            p_pL = UnsteadyIsentropic.p_ratio(u_cL-obj.u_L./obj.c_L,obj.g);
+            p_pL = UnsteadyIsentropic.p_ratio(obj.u_L./obj.c_L-u_cL,obj.g);
         end
 
         function [] = plot(obj, xrange)

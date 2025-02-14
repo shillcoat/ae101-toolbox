@@ -21,9 +21,9 @@ classdef Fan
             %FAN Construct an instance of this class
             %   Detailed explanation goes here
             if direction == 'R'
-                obj.direction = 1;
-            else
                 obj.direction = -1;
+            else
+                obj.direction = 1;
             end
             p = inputParser;
             addParameter(p,'u1',-1);

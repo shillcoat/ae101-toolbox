@@ -208,7 +208,7 @@ classdef Shock
             % rShock.SolveShock(gamma, R);
         end
 
-        function [] = polar(obj, gamma, reflect)
+        function t_max = polar(obj, gamma, reflect)
             %POLAR Plot the shock polar
             %   Plots the shock polar. If reflect is true, also plots the
             %   reflected shock polar.
@@ -219,6 +219,7 @@ classdef Shock
             p211_array = ShockJump.p_ratio(obj.M1, gamma, B1_array);
             plot(rad2deg([flip(-theta1_array) theta1_array]), ...
                 [flip(p211_array) p211_array], 'Color', 'blue');
+            t_max = max(theta1_array);
             
             if reflect
                 ref = obj.reflect(gamma, true);
